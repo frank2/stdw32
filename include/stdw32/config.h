@@ -1,0 +1,47 @@
+#ifndef __STDW32_CONFIG_H
+#define __STDW32_CONFIG_H
+
+#define STDW32_LANG_KNR 0
+#define STDW32_LANG_CXX 1
+
+#ifdef __cplusplus
+#define STDW32_LANG STDW32_LANG_CXX
+#else
+#define STDW32_LANG STDW32_LANG_KNR
+#endif
+
+#define STDW32_BUILD_STATIC 0
+#define STDW32_BUILD_DLL 1
+
+#ifdef STDW32_STATIC
+#define STDW32_BUILD STDW32_BUILD_STATIC
+#else
+#ifdef STDW32_DLL
+#define STDW32_BUILD STDW32_BUILD_DLL
+#else
+#define STDW32_BUILD STDW32_BUILD_STATIC
+#endif
+#endif
+
+#define STDW32_USE_STATIC 0
+#define STDW32_USE_DLL 1
+
+#ifdef STDW32_STATIC
+#define STDW32_BUILD STDW32_BUILD_STATIC
+#define STDW32_USE STDW32_USE_STATIC
+#else
+#ifdef STDW32_DLL
+#define STDW32_BUILD STDW32_BUILD_DLL
+#define STDW32_USE STDW32_USE_DLL
+#endif
+#endif
+
+#if defined(STDW32_BUILDING) && STDW32_BUILD == STDW32_BUILD_DLL
+#define STDW32_DECL __declspec(dllexport)
+#elif STDW32_USE == STDW32_USE_DLL
+#define STDW32_DECL __declspec(dllimport)
+#else
+#define STDW32_DECL
+#endif
+
+#endif

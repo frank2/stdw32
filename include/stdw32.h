@@ -1,6 +1,8 @@
 #ifndef __STDW32_H
 #define __STDW32_H
 
+#include <stdw32/config.h>
+
 #include <stdw32/buffer.h>
 #include <stdw32/char.h>
 #include <stdw32/console.h>
