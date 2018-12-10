@@ -6,12 +6,12 @@
 #include <stdw32/config.h>
 
 #ifdef __cplusplus
-extern "C"
-{
+   STDW32_DECL const void *memchr(const void *ptr, int value, size_t num);
 #endif
 
 #ifdef __cplusplus
-   STDW32_DECL const void *memchr(const void *ptr, int value, size_t num);
+extern "C"
+{
 #endif
    
    STDW32_DECL void *memchr(void *ptr, int value, size_t num);

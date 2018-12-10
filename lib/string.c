@@ -1,26 +1,6 @@
 #include <stdw32/string.h>
 #include <windows.h>
 
-char *
-strcat
-(char *destination, const char *src)
-{
-   if (destination == NULL || src == NULL)
-      return NULL;
-
-   return lstrcatA(destination, src);
-}
-
-wchar_t *
-wcscat
-(wchar_t *destination, const wchar_t *source)
-{
-   if (destination == NULL || src == NULL)
-      return NULL;
-
-   return lstrcatW(destination, src);
-}
-
 #ifdef __cplusplus
 const char *
 strchr
@@ -58,6 +38,26 @@ wcschr
    return NULL;
 }
 #endif
+
+char *
+strcat
+(char *destination, const char *src)
+{
+   if (destination == NULL || src == NULL)
+      return NULL;
+
+   return lstrcatA(destination, src);
+}
+
+wchar_t *
+wcscat
+(wchar_t *destination, const wchar_t *src)
+{
+   if (destination == NULL || src == NULL)
+      return NULL;
+
+   return lstrcatW(destination, src);
+}
 
 char *
 strchr
@@ -111,16 +111,16 @@ wcscmp
 
 int
 strcpy
-(const char *str1, const char *str2)
+(char *destination, const char *src)
 {
-   return lstrcpyA(str1, str2);
+   return lstrcpyA(destination, src);
 }
 
 int
 wcscpy
-(const wchar_t *str1, const wchar_t *str2)
+(wchar_t *destination, const wchar_t *src)
 {
-   return lstrcpyW(str1, str2);
+   return lstrcpyW(destination, src);
 }
 
 size_t
@@ -130,7 +130,7 @@ strcspn
    const char *index;
    
    if (search == NULL || set == NULL)
-      return 0;
+      return strlen(search);
 
    index = search;
 
@@ -154,7 +154,7 @@ wcscspn
    const wchar_t *index;
    
    if (search == NULL || set == NULL)
-      return 0;
+      return wcslen(search);
 
    index = search;
 

@@ -6,17 +6,17 @@
 #include <stdw32/config.h>
 
 #ifdef __cplusplus
+   STDW32_DECL const char *strchr(const char *str, int character);
+   STDW32_DECL const wchar_t *wcschr(const wchar_t *str, wchar_t character);
+#endif
+
+#ifdef __cplusplus
 extern "C"
 {
 #endif
 
-   STDW32_DECL char *strcat(char *destination, const char *source);
-   STDW32_DECL wchar_t *wcscat(wchar_t *destination, const wchar_t *source);
-
-#ifdef __cplusplus
-   STDW32_DECL const char *strchr(const char *str, int character);
-   STDW32_DECL const wchar_t *wcschr(const wchar_t *str, wchar_t character);
-#endif
+   STDW32_DECL char *strcat(char *destination, const char *src);
+   STDW32_DECL wchar_t *wcscat(wchar_t *destination, const wchar_t *src);
 
    STDW32_DECL char *strchr(char *str, int character);
    STDW32_DECL wchar_t *wcschr(wchar_t *str, wchar_t character);
