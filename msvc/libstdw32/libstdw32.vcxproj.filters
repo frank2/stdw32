@@ -13,5 +13,66 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\stdw32">
+      <UniqueIdentifier>{9b475e70-94dd-4128-9aa7-761e674bf6e9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\stdw32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\buffer.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\char.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\config.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\console.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\dir.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\file.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\io.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\memory.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\output.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\process.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\runtime.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\stream.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\string.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\stdw32\time.h">
+      <Filter>Header Files\stdw32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\lib\buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\lib\stream.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
