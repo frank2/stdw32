@@ -16,5 +16,6 @@
 #include <stdw32/stream.h>
 #include <stdw32/string.h>
 #include <stdw32/time.h>
+#include <stdw32/varargs.h>
 
 #endif
