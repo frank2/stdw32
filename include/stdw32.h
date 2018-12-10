@@ -8,6 +8,7 @@
 #include <stdw32/console.h>
 #include <stdw32/dir.h>
 #include <stdw32/file.h>
+#include <stdw32/headers.h>
 #include <stdw32/io.h>
 #include <stdw32/memory.h>
 #include <stdw32/output.h>

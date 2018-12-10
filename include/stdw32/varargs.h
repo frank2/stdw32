@@ -1,11 +1,14 @@
 #ifndef __STDW32_VARARGS_H
 #define __STDW32_VARARGS_H
 
+#ifndef va_start
+
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
+   /* if va_start isn't defined, we can safely assume nothing is. */
    typedef char *va_list;
 
 #define intsizeof(n)    ((sizeof(n) + sizeof(int) - 1) &~(sizeof(int) - 1))
@@ -15,6 +18,8 @@ extern "C"
 
 #ifdef __cplusplus
 }
+#endif
+
 #endif
 
 #endif

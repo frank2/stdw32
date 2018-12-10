@@ -1,10 +1,10 @@
 #ifndef __STDW32_STREAM_H
 #define __STDW32_STREAM_H
 
-#include <stdarg.h>
 #include <stddef.h>
 
 #include <stdw32/config.h>
+#include <stdw32/varargs.h>
 
 #ifdef __cplusplus
 extern "C"
@@ -51,9 +51,10 @@ extern "C"
    STDW32_DECL int vfprintf(FILE *stream, const char *format, va_list args);
    STDW32_DECL int vsnprintf(char *str, size_t len, const char *format, va_list args);
    STDW32_DECL int vsprintf(char *str, const char *format, va_list args);
-   STDW32_DECL int wsnprintf(wchar_t *str, size_t len, const wchar_t *format, va_list args);
+   STDW32_DECL int wsnprintf(wchar_t *str, size_t len, const wchar_t *format, ...);
    STDW32_DECL int wsprintf(wchar_t *str, const wchar_t *format, ...);
-   /* wvsprintf is technically already defined in windows.h, so skip it */
+   STDW32_DECL int wvsprintf(wchar_t *str, const wchar_t *format, va_list args);
+   STDW32_DECL int wvsnprintf(wchar_t *str, size_t len, const wchar_t *format, va_list args);
    
 #ifdef __cplusplus
 }
