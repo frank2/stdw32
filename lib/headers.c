@@ -2,7 +2,7 @@
 #include <windows.h>
 
 void *
-resolve
+resolveWin32
 (const char *library, const char *function)
 {
    HMODULE libHandle;
