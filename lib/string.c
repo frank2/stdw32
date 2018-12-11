@@ -1,5 +1,5 @@
 #include <stdw32/string.h>
-#include <windows.h>
+#include <stdw32/headers.h>
 
 #ifdef __cplusplus
 const char *
@@ -43,6 +43,8 @@ char *
 strcat
 (char *destination, const char *src)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcatA);
+   
    if (destination == NULL || src == NULL)
       return NULL;
 
@@ -53,6 +55,8 @@ wchar_t *
 wcscat
 (wchar_t *destination, const wchar_t *src)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcatW);
+   
    if (destination == NULL || src == NULL)
       return NULL;
 
@@ -99,6 +103,8 @@ int
 strcmp
 (const char *str1, const char *str2)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcmpA);
+   
    return lstrcmpA(str1, str2);
 }
 
@@ -106,6 +112,8 @@ int
 wcscmp
 (const wchar_t *str1, const wchar_t *str2)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcmpW);
+   
    return lstrcmpW(str1, str2);
 }
 
@@ -113,6 +121,8 @@ int
 strcpy
 (char *destination, const char *src)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcpyA);
+   
    return lstrcpyA(destination, src);
 }
 
@@ -120,6 +130,8 @@ int
 wcscpy
 (wchar_t *destination, const wchar_t *src)
 {
+   STDW32_IMPORT("kernel32.dll", lstrcpyW);
+   
    return lstrcpyW(destination, src);
 }
 
@@ -175,6 +187,8 @@ size_t
 strlen
 (const char *str)
 {
+   STDW32_IMPORT("kernel32.dll", lstrlenA);
+   
    return lstrlenA(str);
 }
 
@@ -182,5 +196,7 @@ size_t
 wcslen
 (const wchar_t *str)
 {
+   STDW32_IMPORT("kernel32.dll", lstrlenW);
+   
    return lstrlenW(str);
 }

@@ -1,5 +1,6 @@
 #include <stdw32/stream.h>
 #include <stdw32/string.h>
+#include <stdw32/headers.h>
 #include <windows.h>
 
 /* functions internal to this file */
@@ -50,6 +51,7 @@ int
 fclose
 (FILE *stream)
 {
+   CloseHandle_t CloseHandle = ( (CloseHandle_t)resolveWin32("kernel32.dll", "CloseHandle") );
    HANDLE fp = ( (HANDLE)stream );
 
    if (!CloseHandle(fp))
@@ -62,6 +64,7 @@ int
 fflush
 (FILE *stream)
 {
+   FlushFileBuffers_t FlushFileBuffers = ( (FlushFileBuffers_t)resolveWin32
    HANDLE fp = ( (HANDLE)stream );
 
    if (!FlushFileBuffers(fp))

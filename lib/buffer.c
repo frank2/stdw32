@@ -1,4 +1,5 @@
 #include <stdw32/buffer.h>
+#include <stdw32/headers.h>
 
 #ifdef __cplusplus
 const void *
@@ -55,7 +56,7 @@ void *
 memcpy
 (void *destination, const void *source, size_t num)
 {
-   CopyMemory_t CopyMemory = ( (CopyMemory_t)resolveWin32("kernel32.dll", "CopyMemory") );
+   STDW32_IMPORT("kernel32.dll", CopyMemory);
    
    CopyMemory(destination, source, num);
 
@@ -66,7 +67,7 @@ void *
 memmove
 (void *destination, const void *source, size_t num)
 {
-   MoveMemory_t MoveMemory = ( (MoveMemory_t)resolveWin32("kernel32.dll", "MoveMemory") );
+   STDW32_IMPORT("kernel32.dll", MoveMemory);
    
    MoveMemory(destination, source, num);
 
